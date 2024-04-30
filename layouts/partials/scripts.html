@@ -10,8 +10,6 @@
 
 {{ $js := slice $jQuery $scrollex $scrolly $browser $breakpoints $util $main $demo | resources.Concat "js/bundle.js" | minify }}
 
-{{ debug.Dump $js }}
-
 <!-- Scripts -->
-<script src='{{ $js.RelPermalink }}'></script>
+<script src='{{ absURL $js.RelPermalink }}'></script>
 
